@@ -1,0 +1,124 @@
+<style id="Main.css">
+
+</style>
+<script id="Main.js">
+Application.$controller("ApachepoiExcelPrefabController", ["$scope", function ($scope) {
+	"use strict";
+
+	/* 
+	 * This function will be invoked when any of this prefab's property is changed
+	 * @key: property name
+	 * @newVal: new value of the property
+	 * @oldVal: old value of the property
+	 */
+	function propertyChangeHandler(key, newVal, oldVal) {
+		/*
+		switch (key) {
+			case "prop1":
+				// do something with newVal for property 'prop1'
+				break;
+			case "prop2":
+				// do something with newVal for property 'prop2'
+				break;
+		}
+		*/
+	}
+	/* register the property change handler */
+	$scope.propertyManager.add($scope.propertyManager.ACTIONS.CHANGE, propertyChangeHandler);
+
+	$scope.onInitPrefab = function() {
+		// this method will be triggered post initialization of the prefab.
+	}
+}]);
+
+Application.$controller("grid1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+</script>
+<script id="Main.variables.json">
+var _MainPage_Variables_ ={
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-supportedLocale-wm.Variable1402640443182"
+	},
+	"XlsReaderWriterReadExcel": {
+		"name": "XlsReaderWriterReadExcel",
+		"type": "com.wavemaker.studio.json.JSONArray",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "filepath",
+						"type": "string",
+						"value": "bind:filepath"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "XlsReaderWriter",
+		"operation": "readExcel",
+		"operationType": "post",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "post",
+			"name": "readExcel",
+			"relativePath": "/xlsReaderWriter/readExcel",
+			"parameters": [
+				{
+					"name": "filepath",
+					"parameterType": "query"
+				}
+			]
+		},
+		"_id": "wm-XlsReaderWriterReadExcel-wm.ServiceVariable-1444125164636"
+	}
+}
+</script>
+<script id="Main.html" type="text/ng-template">
+<wm-page name="page1" data-ng-controller="ApachepoiExcelPrefabController">
+    <wm-view name="view1" class="container" backgroundcolor="#fff">
+        <wm-button on-click="XlsReaderWriterReadExcel" name="button1" class="btn-default" caption="Button" type="button"></wm-button>
+        <wm-grid readonlygrid="true" name="grid1" dataset="bind:Variables.XlsReaderWriterReadExcel.dataSet"></wm-grid>
+    </wm-view>
+</wm-page>
+</script>

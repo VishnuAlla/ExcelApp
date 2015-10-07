@@ -1,0 +1,1 @@
+var _WM_APP_PROPERTIES = {"defaultLanguage":"en","type":"PREFAB","homePage":"Main","platformType":"DEFAULT","activeTheme":"default"}

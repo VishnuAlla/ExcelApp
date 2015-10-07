@@ -1,0 +1,6 @@
+<wm-page name="page1" data-ng-controller="ApachepoiExcelPrefabController">
+    <wm-view name="view1" class="container" backgroundcolor="#fff">
+        <wm-button on-click="XlsReaderWriterReadExcel" name="button1" class="btn-default" caption="Button" type="button"></wm-button>
+        <wm-grid readonlygrid="true" name="grid1" dataset="bind:Variables.XlsReaderWriterReadExcel.dataSet"></wm-grid>
+    </wm-view>
+</wm-page>

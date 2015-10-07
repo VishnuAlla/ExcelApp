@@ -1,0 +1,74 @@
+{
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-supportedLocale-wm.Variable1402640443182"
+	},
+	"XlsReaderWriterReadExcel": {
+		"name": "XlsReaderWriterReadExcel",
+		"type": "com.wavemaker.studio.json.JSONArray",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "filepath",
+						"type": "string",
+						"value": "bind:filepath"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"service": "XlsReaderWriter",
+		"operation": "readExcel",
+		"operationType": "post",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"serviceType": "JavaService",
+		"category": "wm.ServiceVariable",
+		"isDefault": true,
+		"wmServiceOperationInfo": {
+			"methodType": "post",
+			"name": "readExcel",
+			"relativePath": "/xlsReaderWriter/readExcel",
+			"parameters": [
+				{
+					"name": "filepath",
+					"parameterType": "query"
+				}
+			]
+		},
+		"_id": "wm-XlsReaderWriterReadExcel-wm.ServiceVariable-1444125164636"
+	}
+}
